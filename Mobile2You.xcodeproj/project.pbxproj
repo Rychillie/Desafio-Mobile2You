@@ -13,6 +13,7 @@
 		89647E7C271B6FD800986CE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89647E7B271B6FD800986CE9 /* Preview Assets.xcassets */; };
 		89647E7E271B6FD800986CE9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89647E7D271B6FD800986CE9 /* Persistence.swift */; };
 		89647E81271B6FD800986CE9 /* Mobile2You.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89647E7F271B6FD800986CE9 /* Mobile2You.xcdatamodeld */; };
+		89647E8A271B70FD00986CE9 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89647E89271B70FD00986CE9 /* MovieViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,8 @@
 		89647E7B271B6FD800986CE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89647E7D271B6FD800986CE9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		89647E80271B6FD800986CE9 /* Mobile2You.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mobile2You.xcdatamodel; sourceTree = "<group>"; };
+		89647E87271B6FF900986CE9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		89647E89271B70FD00986CE9 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +42,7 @@
 		89647E68271B6FD600986CE9 = {
 			isa = PBXGroup;
 			children = (
+				89647E87271B6FF900986CE9 /* README.md */,
 				89647E73271B6FD600986CE9 /* Mobile2You */,
 				89647E72271B6FD600986CE9 /* Products */,
 			);
@@ -55,6 +59,7 @@
 		89647E73271B6FD600986CE9 /* Mobile2You */ = {
 			isa = PBXGroup;
 			children = (
+				89647E88271B70DD00986CE9 /* ViewModel */,
 				89647E74271B6FD600986CE9 /* Mobile2YouApp.swift */,
 				89647E76271B6FD600986CE9 /* ContentView.swift */,
 				89647E78271B6FD800986CE9 /* Assets.xcassets */,
@@ -71,6 +76,14 @@
 				89647E7B271B6FD800986CE9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		89647E88271B70DD00986CE9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				89647E89271B70FD00986CE9 /* MovieViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89647E7E271B6FD800986CE9 /* Persistence.swift in Sources */,
+				89647E8A271B70FD00986CE9 /* MovieViewModel.swift in Sources */,
 				89647E77271B6FD600986CE9 /* ContentView.swift in Sources */,
 				89647E81271B6FD800986CE9 /* Mobile2You.xcdatamodeld in Sources */,
 				89647E75271B6FD600986CE9 /* Mobile2YouApp.swift in Sources */,
