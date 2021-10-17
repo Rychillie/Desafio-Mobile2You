@@ -44,7 +44,7 @@ struct MovieHeaderView: View {
                 .scaledToFit()
                 .padding(.top, -20)
             HStack {
-                Text(viewModel.movie?.original_title ?? "").foregroundColor(.white)
+                Text(viewModel.movie?.original_title ?? "").foregroundColor(.primary)
                     .font(.system(size: 24))
                     .fontWeight(.black)
                     .padding(.leading, 20)
@@ -55,7 +55,7 @@ struct MovieHeaderView: View {
                     Image(systemName: viewModel.imageName)
                         .resizable()
                         .frame(width: 20,height: 20)
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                         .padding(.trailing, 20)
                 }
                 
@@ -64,17 +64,17 @@ struct MovieHeaderView: View {
                 HStack{
                     Image(systemName: "heart.fill").resizable()
                         .frame(width: 15,height: 15)
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                     Text(String(format: "%@ Likes",String(viewModel.movie?.vote_count ?? 0)))
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                         .font(.system(size: 16))
                 }
                 HStack{
                     Image(systemName: "flame").resizable()
                         .frame(width: 15,height: 15)
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                     Text("\((viewModel.movie?.popularity ?? 0.0).formatToK())K Views")
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                         .font(.system(size: 16))
                 }.padding(.leading,20)
                 Spacer()
@@ -120,15 +120,15 @@ struct MovieListItemView: View {
                 )
             VStack(alignment: .leading) {
                 Text(title)
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary)
                     .font(.system(size: 20))
                 HStack{
                     Text(date.prefix(4))
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                         .font(.system(size: 14))
                     ForEach(geners, id: \.self) { item in
                         Text(item)
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                             .font(.system(size: 14))
                     }
                 }
@@ -139,7 +139,7 @@ struct MovieListItemView: View {
             } label: {
                 Image(systemName: self.checked ? "checkmark.circle.fill" : "checkmark.circle")
                     .resizable()
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary)
                     .frame(
                         width: 15,
                         height: 15
