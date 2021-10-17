@@ -8,34 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		89647E75271B6FD600986CE9 /* Mobile2YouApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89647E74271B6FD600986CE9 /* Mobile2YouApp.swift */; };
-		89647E77271B6FD600986CE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89647E76271B6FD600986CE9 /* ContentView.swift */; };
+		89647E77271B6FD600986CE9 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89647E76271B6FD600986CE9 /* MovieView.swift */; };
 		89647E79271B6FD800986CE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89647E78271B6FD800986CE9 /* Assets.xcassets */; };
 		89647E7C271B6FD800986CE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89647E7B271B6FD800986CE9 /* Preview Assets.xcassets */; };
 		89647E7E271B6FD800986CE9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89647E7D271B6FD800986CE9 /* Persistence.swift */; };
 		89647E81271B6FD800986CE9 /* Mobile2You.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89647E7F271B6FD800986CE9 /* Mobile2You.xcdatamodeld */; };
-		89647E8A271B70FD00986CE9 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89647E89271B70FD00986CE9 /* MovieViewModel.swift */; };
-		89C28ACB271C66D100051A8C /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C28ACA271C66D100051A8C /* MovieInfo.swift */; };
-		89C28ACD271C66E400051A8C /* MovieCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C28ACC271C66E400051A8C /* MovieCard.swift */; };
 		89C28ACF271C670200051A8C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C28ACE271C670200051A8C /* Movie.swift */; };
 		89C28AD1271C671D00051A8C /* MovieSimilar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C28AD0271C671D00051A8C /* MovieSimilar.swift */; };
 		89C28AD4271C673A00051A8C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C28AD3271C673A00051A8C /* Extensions.swift */; };
+		89C28AD6271C75D700051A8C /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C28AD5271C75D700051A8C /* MovieViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		89647E71271B6FD600986CE9 /* Mobile2You.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobile2You.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89647E74271B6FD600986CE9 /* Mobile2YouApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile2YouApp.swift; sourceTree = "<group>"; };
-		89647E76271B6FD600986CE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		89647E76271B6FD600986CE9 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		89647E78271B6FD800986CE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89647E7B271B6FD800986CE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89647E7D271B6FD800986CE9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		89647E80271B6FD800986CE9 /* Mobile2You.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mobile2You.xcdatamodel; sourceTree = "<group>"; };
 		89647E87271B6FF900986CE9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		89647E89271B70FD00986CE9 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
-		89C28ACA271C66D100051A8C /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
-		89C28ACC271C66E400051A8C /* MovieCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCard.swift; sourceTree = "<group>"; };
 		89C28ACE271C670200051A8C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		89C28AD0271C671D00051A8C /* MovieSimilar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSimilar.swift; sourceTree = "<group>"; };
 		89C28AD3271C673A00051A8C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		89C28AD5271C75D700051A8C /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +89,6 @@
 		89647E88271B70DD00986CE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				89647E89271B70FD00986CE9 /* MovieViewModel.swift */,
 				89C28ACE271C670200051A8C /* Movie.swift */,
 				89C28AD0271C671D00051A8C /* MovieSimilar.swift */,
 			);
@@ -103,7 +98,7 @@
 		89C28AC8271C667E00051A8C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				89647E76271B6FD600986CE9 /* ContentView.swift */,
+				89647E76271B6FD600986CE9 /* MovieView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,8 +106,7 @@
 		89C28AC9271C66BF00051A8C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				89C28ACA271C66D100051A8C /* MovieInfo.swift */,
-				89C28ACC271C66E400051A8C /* MovieCard.swift */,
+				89C28AD5271C75D700051A8C /* MovieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -196,13 +190,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C28AD1271C671D00051A8C /* MovieSimilar.swift in Sources */,
+				89C28AD6271C75D700051A8C /* MovieViewModel.swift in Sources */,
 				89647E7E271B6FD800986CE9 /* Persistence.swift in Sources */,
-				89647E8A271B70FD00986CE9 /* MovieViewModel.swift in Sources */,
-				89647E77271B6FD600986CE9 /* ContentView.swift in Sources */,
-				89C28ACD271C66E400051A8C /* MovieCard.swift in Sources */,
+				89647E77271B6FD600986CE9 /* MovieView.swift in Sources */,
 				89C28AD4271C673A00051A8C /* Extensions.swift in Sources */,
 				89647E81271B6FD800986CE9 /* Mobile2You.xcdatamodeld in Sources */,
-				89C28ACB271C66D100051A8C /* MovieInfo.swift in Sources */,
 				89C28ACF271C670200051A8C /* Movie.swift in Sources */,
 				89647E75271B6FD600986CE9 /* Mobile2YouApp.swift in Sources */,
 			);

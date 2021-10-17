@@ -13,7 +13,7 @@ struct Mobile2YouApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MovieView(viewModel: MovieViewModel())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
