@@ -8,11 +8,13 @@
 import SwiftUI
 
 class MovieViewModel: ObservableObject {
-//    var apiURL : String = "https://api.themoviedb.org/3";
-//    var apiKey: String = ProcessInfo.processInfo.environment["API_KEY"] ?? "";
+    var apiURL : String = "https://api.themoviedb.org/3";
+    var apiKey: String = ProcessInfo.processInfo.environment["API_KEY"] ?? "";
+    let movieId: String = "333339"; // Ready Player One
     
     func fetchData() {
-        let url = URL(string: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6fbec5853a8e2caa4a9bbaa6fb7127e0")
+        let url = URL(string: "\(apiURL)/discover/movie?sort_by=popularity.desc&api_key=\(apiKey)")
+//        let callMovie = URL(string: "\(apiURL)/movie/\(movieId)?api_key=\(apiKey)")
         
         URLSession.shared.dataTask(with: url!) { data, response, error in
             if let error = error {
@@ -35,3 +37,4 @@ class MovieViewModel: ObservableObject {
         }.resume()
     }
 }
+
