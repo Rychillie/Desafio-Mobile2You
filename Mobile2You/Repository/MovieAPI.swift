@@ -36,11 +36,11 @@ class MovieAPI{
         }.resume()
     }
     
-    func getGeners(completion: @escaping (Genres) ->()) {
+    func getGeners(completion: @escaping (Genrens) ->()) {
         guard let url = URL(string: "\(url)/genre/movie/list?api_key=\(apiKey)")else{return}
         
         URLSession.shared.dataTask(with: url) { data, _, _ in
-            let geners = try! JSONDecoder().decode(Genres.self, from: data!)
+            let geners = try! JSONDecoder().decode(Genrens.self, from: data!)
             
             DispatchQueue.main.async {
                 completion(geners)

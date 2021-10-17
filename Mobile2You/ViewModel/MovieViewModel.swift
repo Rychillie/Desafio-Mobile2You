@@ -9,6 +9,8 @@ import Foundation
 
 final class MovieViewModel: ObservableObject {
     @Published var movieSimilarList: [MovieResults] = []
+    @Published var movieGeneres: [String] = []
+    @Published var genereList: [Geners] = []
     @Published var movie: Movie?
     @Published var movieSimiliar: MoviesSimiliar?
     @Published var isFavorite: Bool = false
@@ -37,6 +39,20 @@ final class MovieViewModel: ObservableObject {
                 )
             }
         }
-        print(movieSimilarList)
+    }
+    
+    func fetchGeneres() {
+        movieRepository.getGeners { list in
+            list.genres.forEach { geners in
+                self.genereList.append(Geners(id: geners.id, name: geners.name))
+            }
+        }
+    }
+}
+
+extension Double {
+    func formatToK() -> String {
+        let num = self > 1000 ? Double(self)/1000.0 : Double(self)
+        return String(format: self >= 1000 ? "%.1fK" : "%.0f",num)
     }
 }

@@ -36,7 +36,11 @@ struct MovieResults: Decodable, Identifiable, Hashable {
     }
 }
 
-struct Genres: Decodable{
+struct Genrens: Decodable{
+    var genres: [Geners]
+}
+
+struct Geners: Decodable, Identifiable, Hashable {
     var id: Int
     var name: String
 }

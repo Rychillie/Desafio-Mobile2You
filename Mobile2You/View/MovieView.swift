@@ -23,6 +23,7 @@ struct MovieView: View {
                 viewModel.movie = movie
             }
             viewModel.fetchMovieSimilarList()
+            viewModel.fetchGeneres()
         }
     }
 }
@@ -36,11 +37,12 @@ struct MovieHeaderView: View {
     )
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(){
             Image(uiImage: "https://image.tmdb.org/t/p/original/\(viewModel.movie?.poster_path ?? "")".load())
                 .resizable()
                 .mask(self.imageEffect)
                 .scaledToFit()
+                .padding(.top, -20)
             HStack {
                 Text(viewModel.movie?.original_title ?? "").foregroundColor(.white)
                     .font(.system(size: 24))
@@ -71,7 +73,7 @@ struct MovieHeaderView: View {
                     Image(systemName: "flame").resizable()
                         .frame(width: 15,height: 15)
                         .foregroundColor(.white)
-                    Text(String(format: "%d Views",String(viewModel.movie?.popularity ?? 0)))
+                    Text("\((viewModel.movie?.popularity ?? 0.0).formatToK())K Views")
                         .foregroundColor(.white)
                         .font(.system(size: 16))
                 }.padding(.leading,20)
@@ -93,7 +95,8 @@ struct MovieListView: View {
                     checked: checked,
                     title: movie.title ?? "",
                     date: movie.releaseDate ?? "",
-                    image: movie.posterPath ?? ""
+                    image: movie.posterPath ?? "",
+                    geners: ["action", "drama", "anime"]
                 )
             }
         }
@@ -105,6 +108,7 @@ struct MovieListItemView: View {
     var title: String
     var date: String
     var image: String
+    var geners: [String]
     
     var body: some View {
         HStack{
@@ -119,12 +123,14 @@ struct MovieListItemView: View {
                     .foregroundColor(.white)
                     .font(.system(size: 20))
                 HStack{
-                    Text(date)
+                    Text(date.prefix(4))
                         .foregroundColor(.white)
                         .font(.system(size: 14))
-                    Text("Geners")
-                        .foregroundColor(.white)
-                        .font(.system(size: 14))
+                    ForEach(geners, id: \.self) { item in
+                        Text(item)
+                            .foregroundColor(.white)
+                            .font(.system(size: 14))
+                    }
                 }
             }.padding(10)
             Spacer()
