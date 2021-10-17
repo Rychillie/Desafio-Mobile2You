@@ -48,6 +48,18 @@ final class MovieViewModel: ObservableObject {
             }
         }
     }
+    
+    func getGenerers(indexs: [Int]) -> [String] {
+        var arrayGeners: [String] = []
+        indexs.forEach { item in
+            let genero = genereList.filter({$0.id == item }).map({$0.name})
+            if arrayGeners.count < 2 {
+                arrayGeners.append(genero[0])
+            }
+            return
+        }
+        return arrayGeners
+    }
 }
 
 extension Double {

@@ -96,7 +96,7 @@ struct MovieListView: View {
                     title: movie.title ?? "",
                     date: movie.releaseDate ?? "",
                     image: movie.posterPath ?? "",
-                    geners: ["action", "drama", "anime"]
+                    geners: viewModel.getGenerers(indexs: movie.genre ?? [])
                 )
             }
         }
