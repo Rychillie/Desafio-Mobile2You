@@ -29,7 +29,7 @@ class MovieAPI{
         
         URLSession.shared.dataTask(with: url) { data, _, _ in
             let dataRequest = try! JSONDecoder().decode(MoviesSimiliar.self, from: data!)
-            print(dataRequest.results)
+            
             DispatchQueue.main.async {
                 completion(dataRequest)
             }

@@ -32,7 +32,8 @@ final class MovieViewModel: ObservableObject {
                         title: movies.title,
                         genre: movies.genre,
                         posterPath: movies.posterPath,
-                        releaseDate: movies.releaseDate)
+                        releaseDate: movies.releaseDate
+                    )
                 )
             }
         }

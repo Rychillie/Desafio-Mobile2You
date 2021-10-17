@@ -12,12 +12,17 @@ struct MovieView: View {
     
     var body: some View {
         ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
-            MovieHeaderView().environmentObject(viewModel)
-        }.onAppear {
+            ScrollView {
+                Color.black.edgesIgnoringSafeArea(.all)
+                MovieHeaderView().environmentObject(viewModel)
+                MovieListView().environmentObject(viewModel)
+            }
+        }.ignoresSafeArea()
+            .onAppear {
             MovieAPI().getFirstMovie(id: viewModel.firstIdMovie) { movie in
                 viewModel.movie = movie
             }
+            viewModel.fetchMovieSimilarList()
         }
     }
 }
@@ -31,7 +36,7 @@ struct MovieHeaderView: View {
     )
     
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
             Image(uiImage: "https://image.tmdb.org/t/p/original/\(viewModel.movie?.poster_path ?? "")".load())
                 .resizable()
                 .mask(self.imageEffect)
@@ -51,7 +56,7 @@ struct MovieHeaderView: View {
                         .foregroundColor(.white)
                         .padding(.trailing, 20)
                 }
-
+                
             }
             HStack(alignment: .firstTextBaseline) {
                 HStack{
@@ -73,6 +78,68 @@ struct MovieHeaderView: View {
                 Spacer()
             }.padding(.horizontal,20)
         }.padding(.bottom,20)
+    }
+}
+
+struct MovieListView: View {
+    @EnvironmentObject var viewModel: MovieViewModel
+    
+    @State var checked: Bool = false;
+    
+    var body: some View {
+        VStack{
+            ForEach(viewModel.movieSimilarList, id: \.self) { movie in
+                MovieListItemView(
+                    checked: checked,
+                    title: movie.title ?? "",
+                    date: movie.releaseDate ?? "",
+                    image: movie.posterPath ?? ""
+                )
+            }
+        }
+    }
+}
+
+struct MovieListItemView: View {
+    @State var checked: Bool
+    var title: String
+    var date: String
+    var image: String
+    
+    var body: some View {
+        HStack{
+            Image(uiImage: "https://image.tmdb.org/t/p/original/\(image)".load())
+                .resizable()
+                .frame(
+                    width: 60,
+                    height: 100
+                )
+            VStack(alignment: .leading) {
+                Text(title)
+                    .foregroundColor(.white)
+                    .font(.system(size: 20))
+                HStack{
+                    Text(date)
+                        .foregroundColor(.white)
+                        .font(.system(size: 14))
+                    Text("Geners")
+                        .foregroundColor(.white)
+                        .font(.system(size: 14))
+                }
+            }.padding(10)
+            Spacer()
+            Button {
+                self.checked.toggle()
+            } label: {
+                Image(systemName: self.checked ? "checkmark.circle.fill" : "checkmark.circle")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(
+                        width: 15,
+                        height: 15
+                    )
+            }.padding(.trailing,20)
+        }.padding(0)
     }
 }
 
