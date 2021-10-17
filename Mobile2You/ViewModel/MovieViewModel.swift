@@ -8,10 +8,12 @@
 import Foundation
 
 final class MovieViewModel: ObservableObject {
-    @Published var imageName: String = "heart"
     @Published var movieSimilarList: [MovieResults] = []
     @Published var movie: Movie?
     @Published var movieSimiliar: MoviesSimiliar?
+    @Published var isFavorite: Bool = false
+    
+    var imageName: String { isFavorite ? "heart.fill" : "heart"}
     
     private var movieRepository: MovieAPI
     let firstIdMovie = 333339
