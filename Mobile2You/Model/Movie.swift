@@ -15,19 +15,28 @@ struct Movie: Decodable{
     var popularity: Double?
 }
 
-class Api{
-    private var apiKey: String = ProcessInfo.processInfo.environment["API_KEY"] ?? "";
+struct MoviesSimiliar: Decodable{
+    var page: Int
+    var results: [MovieResults]
+}
+
+struct MovieResults: Decodable, Identifiable, Hashable {
+    var idResult: UUID = UUID()
+    var id: String?
+    var title: String?
+    var genre: [Int]?
+    var posterPath: String?
+    var releaseDate: String?
     
-    func getFirstMovie(id: Int, completion: @escaping (Movie) -> ()){
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=\(apiKey)")else{return}
-        
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            let movies = try! JSONDecoder().decode(Movie.self, from: data!)
-            
-            DispatchQueue.main.async {
-                completion(movies)
-            }
-            
-        }.resume()
+    enum CodingKeys: String, CodingKey{
+        case posterPath = "poster_path"
+        case releaseDate = "release_date"
+        case genre = "genre_ids"
+        case title
     }
+}
+
+struct Genres: Decodable{
+    var id: Int
+    var name: String
 }

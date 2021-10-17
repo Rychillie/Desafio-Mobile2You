@@ -13,25 +13,27 @@ final class MovieViewModel: ObservableObject {
     @Published var movie: Movie?
     @Published var movieSimiliar: MoviesSimiliar?
     
-    private var movieRepository: ApiGetSimiliar
+    private var movieRepository: MovieAPI
     let firstIdMovie = 333339
     
-    init (_ movieRepository: ApiGetSimiliar = ApiGetSimiliar()) {
+    init (_ movieRepository: MovieAPI = MovieAPI()) {
         self.movieRepository = movieRepository
     }
     
     // MARK: Methods
     func fetchMovieSimilarList() {
         movieRepository.getSimiliarMoviesById(id: firstIdMovie) { item in
-            item.results.forEach { item in
-                self.movieSimilarList.append(MovieResults(
-                    title: item.title,
-                    genre: item.genre,
-                    posterPath: item.posterPath,
-                    releaseDate: item.releaseDate
-                ))
+            item.results.forEach { movies in
+                self.movieSimilarList.append(
+                    MovieResults(
+                        id: movies.id,
+                        title: movies.title,
+                        genre: movies.genre,
+                        posterPath: movies.posterPath,
+                        releaseDate: movies.releaseDate)
+                )
             }
         }
+        print(movieSimilarList)
     }
 }
-

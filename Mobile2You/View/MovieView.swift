@@ -19,7 +19,7 @@ struct MovieView: View {
                 ScrollView (showsIndicators: false) {
                     MovieInfo().environmentObject(viewModel)
                         VStack{
-                            ForEach(viewModel.movieSimilarList){ card in
+                            ForEach(viewModel.movieSimilarList, id: \.self){ card in
                                 MovieCard(name: card.title ?? "Title",
                                           posterPath: card.posterPath ?? "",
                                           genres: card.genre ?? [0],
@@ -27,21 +27,16 @@ struct MovieView: View {
                                 )
                             }
                         }.frame(width: g.size.width , height: g.size.height)
-                    
-                   
-                    
                 }.ignoresSafeArea(.all, edges: .all).frame(width: g.size.width)
 
                 
             }.background(LinearGradient(gradient: Gradient(colors: [.black.opacity(0.80), .black]), startPoint: .center, endPoint: .bottom))
             
         }.onAppear{
-            Api().getFirstMovie(id: viewModel.firstIdMovie) { (movie) in
+            MovieAPI().getFirstMovie(id: viewModel.firstIdMovie) { (movie) in
                 viewModel.movie = movie
             }
-            ApiGetSimiliar().getSimiliarMoviesById(id: viewModel.firstIdMovie) { (movie) in
-                viewModel.movieSimiliar = movie
-            }
+            viewModel.fetchMovieSimilarList()
         }
     }
 }
