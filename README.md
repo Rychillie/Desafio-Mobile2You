@@ -14,7 +14,7 @@ Para realizar este projeto, recebi instruções sobre os requisitos e também di
 2. As informações do filme devem vir do endpoint [getMovieDetails](https://developers.themoviedb.org/3/movies/get-movie-details)
 3. Usar o `vote_count` que retorna da API para apresentar o número de likes
 4. Substituir o "3 of 10 watched" por "`<popularity>` views", utilizando o valor retornado da API e mantendo algum ícone ao lado
-5. O ícone de like(coração) deve mudar quando clicado, alternando entre preenchido e vazop.
+5. O ícone de like(coração) deve mudar quando clicado, alternando entre preenchido e vazio.
 6. Deve haver uma lista de filmes abaixo dos detalhes
 7. O app deve ser desenvolvido utilizando a linguagemm Swift
 8. O projeto deve ser disponibilizado em um repositório aberto no GitHub. Envie a URL assim que possível
