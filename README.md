@@ -71,7 +71,9 @@ E então a aplicação será executada na sua máquina.
 
 Desenvolver este projeto foi um desafio e tanto, pude aproveitar muito do conhecimento de logica que venho aprendendo e coisas simples como criação de interface com SWIFTUI.
 
-Minha maior dificuldade tenho que dizer que foi relacionar Generos de filmes similares a suas respectivas ID's. Uma coisa que gostaria de ter feito, porem por falta de conhecimento é um efeito de Parallax no banner que quando feito scroll ele fica no fundo da listagem de filmes similares. 
+Minha maior dificuldade tenho que dizer que foi relacionar Generos de filmes similares a suas respectivas ID's. Uma coisa que gostaria de ter feito, porem por falta de conhecimento é um efeito de Parallax no banner que quando feito scroll ele fica no fundo da listagem de filmes similares.
+
+Devo comentar que não utilizei nenhum pacote no projeto pela falta de pratica com tais, pretendo agora com mais tempo ir conhecendo e quem sabe melhorando o código da aplicação.
 
 Pretendo realizar updates, afim de evoluir e continuar praticando como sempre.
 
